@@ -1,9 +1,9 @@
-"use client";
+'use client'
 
-export function Analytics() {
-	const token = process.env.NEXT_PUBLIC_BEAM_TOKEN;
+export const Analytics = () => {
+	const token = process.env.NEXT_PUBLIC_BEAM_TOKEN
 	if (!token) {
-		return null;
+		return null
 	}
 	return (
 		<script
@@ -11,5 +11,5 @@ export function Analytics() {
 			data-token={token}
 			async
 		/>
-	);
+	)
 }

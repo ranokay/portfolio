@@ -1,31 +1,31 @@
-"use client";
-import { Github, Mail, Twitter } from "lucide-react";
-import Link from "next/link";
-import { Navigation } from "../components/nav";
-import { Card } from "../components/card";
+'use client'
+import { Github, Mail, Twitter } from 'lucide-react'
+import Link from 'next/link'
+import { Navigation } from '../components/nav'
+import { Card } from '../components/card'
 
 const socials = [
 	{
 		icon: <Twitter size={20} />,
-		href: "https://twitter.com/chronark_",
-		label: "Twitter",
-		handle: "@chronark_",
+		href: 'https://twitter.com/ranokay_dev',
+		label: 'Twitter',
+		handle: '@ranokay_dev',
 	},
 	{
 		icon: <Mail size={20} />,
-		href: "mailto:dev@chronark.com",
-		label: "Email",
-		handle: "dev@chronark.com",
+		href: 'mailto:contact@oxystack.com',
+		label: 'Email',
+		handle: 'contact@oxystack.com',
 	},
 	{
 		icon: <Github size={20} />,
-		href: "https://github.com/chronark",
-		label: "Github",
-		handle: "chronark",
+		href: 'https://github.com/ranokay',
+		label: 'Github',
+		handle: 'ranokay',
 	},
-];
+]
 
-export default function Example() {
+const Example = () => {
 	return (
 		<div className=" bg-gradient-to-tl from-zinc-900/0 via-zinc-900 to-zinc-900/0">
 			<Navigation />
@@ -44,7 +44,7 @@ export default function Example() {
 								/>
 								<span className="relative z-10 flex items-center justify-center w-12 h-12 text-sm duration-1000 border rounded-full text-zinc-200 group-hover:text-white group-hover:bg-zinc-900 border-zinc-500 bg-zinc-900 group-hover:border-zinc-200 drop-shadow-orange">
 									{s.icon}
-								</span>{" "}
+								</span>{' '}
 								<div className="z-10 flex flex-col items-center">
 									<span className="text-xl font-medium duration-150 lg:text-3xl text-zinc-200 group-hover:text-white font-display">
 										{s.handle}
@@ -59,5 +59,7 @@ export default function Example() {
 				</div>
 			</div>
 		</div>
-	);
+	)
 }
+
+export default Example
