@@ -1,24 +1,27 @@
 import '../global.css'
-import { Inter } from '@next/font/google'
-import LocalFont from '@next/font/local'
+import { Inter } from 'next/font/google'
+import LocalFont from 'next/font/local'
 import { Metadata } from 'next'
-import { Analytics } from './components/analytics'
+import { Analytics } from '@vercel/analytics/react'
+
+const baseURL = process.env.NEXT_PUBLIC_BASE_URL
 
 export const metadata: Metadata = {
 	title: {
-		default: 'ranokay.oxystack.com',
-		template: '%s | ranokay.oxystack.com',
+		default: "ranokay's portfolio",
+		template: '%s | ranokay',
 	},
-	description: 'Software engineer at upstash.com and founder of planetfall.io',
+	description:
+		'Full-stack developer. I build websites, web apps, and mobile apps.',
 	openGraph: {
-		title: 'ranokay.oxystack.com',
+		title: "ranokay's portfolio",
 		description:
-			'Software engineer at upstash.com and founder of planetfall.io',
-		url: 'https://ranokay.oxystack.com',
+			'Full-stack developer. I build websites, web apps, and mobile apps.',
+		url: baseURL,
 		siteName: 'ranokay.oxystack.com',
 		images: [
 			{
-				url: 'https://ranokay.oxystack.com/og.png',
+				url: `${baseURL}/og.png`,
 				width: 1920,
 				height: 1080,
 			},
@@ -38,7 +41,7 @@ export const metadata: Metadata = {
 		},
 	},
 	twitter: {
-		title: 'ranokay',
+		title: 'ranokay_dev',
 		card: 'summary_large_image',
 	},
 	icons: {
