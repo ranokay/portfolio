@@ -16,7 +16,7 @@ type Props = {
 
 const redis = Redis.fromEnv()
 
-export const generateStaticParams = async (): Promise<Props['params'][]> => {
+export async function generateStaticParams(): Promise<Props['params'][]> {
 	return allProjects
 		.filter((p) => p.published)
 		.map((p) => ({
@@ -24,7 +24,7 @@ export const generateStaticParams = async (): Promise<Props['params'][]> => {
 		}))
 }
 
-const PostPage = async ({ params }: Props) => {
+export default async function PostPage({ params }: Props) {
 	const slug = params?.slug
 	const project = allProjects.find((project) => project.slug === slug)
 
@@ -46,5 +46,3 @@ const PostPage = async ({ params }: Props) => {
 		</div>
 	)
 }
-
-export default PostPage

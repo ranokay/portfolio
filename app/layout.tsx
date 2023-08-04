@@ -1,27 +1,24 @@
 import '../global.css'
-import { Inter } from 'next/font/google'
-import LocalFont from 'next/font/local'
+import { Inter } from '@next/font/google'
+import LocalFont from '@next/font/local'
 import { Metadata } from 'next'
-import { Analytics } from '@vercel/analytics/react'
-
-const baseURL = process.env.NEXT_PUBLIC_BASE_URL
+import { Analytics } from './components/analytics'
 
 export const metadata: Metadata = {
 	title: {
-		default: "ranokay's portfolio",
-		template: '%s | ranokay',
+		default: 'chronark.com',
+		template: '%s | chronark.com',
 	},
-	description:
-		'Full-stack developer. I build websites, web apps, and mobile apps.',
+	description: 'Software engineer at upstash.com and founder of planetfall.io',
 	openGraph: {
-		title: "ranokay's portfolio",
+		title: 'chronark.com',
 		description:
-			'Full-stack developer. I build websites, web apps, and mobile apps.',
-		url: baseURL,
-		siteName: 'ranokay.oxystack.com',
+			'Software engineer at upstash.com and founder of planetfall.io',
+		url: 'https://chronark.com',
+		siteName: 'chronark.com',
 		images: [
 			{
-				url: `${baseURL}/og.png`,
+				url: 'https://chronark.com/og.png',
 				width: 1920,
 				height: 1080,
 			},
@@ -41,7 +38,7 @@ export const metadata: Metadata = {
 		},
 	},
 	twitter: {
-		title: 'ranokay_dev',
+		title: 'Chronark',
 		card: 'summary_large_image',
 	},
 	icons: {
@@ -58,11 +55,11 @@ const calSans = LocalFont({
 	variable: '--font-calsans',
 })
 
-const RootLayout = ({
+export default function RootLayout({
 	children,
 }: {
 	children: React.ReactNode
-}) => {
+}) {
 	return (
 		<html lang='en' className={[inter.variable, calSans.variable].join(' ')}>
 			<head>
@@ -78,5 +75,3 @@ const RootLayout = ({
 		</html>
 	)
 }
-
-export default RootLayout

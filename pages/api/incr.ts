@@ -6,7 +6,7 @@ export const config = {
 	runtime: 'edge',
 }
 
-const incr = async (req: NextRequest): Promise<NextResponse> => {
+export default async function incr(req: NextRequest): Promise<NextResponse> {
 	if (req.method !== 'POST') {
 		return new NextResponse('use POST', { status: 405 })
 	}
@@ -45,5 +45,3 @@ const incr = async (req: NextRequest): Promise<NextResponse> => {
 	await redis.incr(['pageviews', 'projects', slug].join(':'))
 	return new NextResponse(null, { status: 202 })
 }
-
-export default incr
