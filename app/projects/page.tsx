@@ -10,7 +10,7 @@ import { Eye } from 'lucide-react'
 const redis = Redis.fromEnv()
 
 export const revalidate = 60
-const ProjectsPage = async () => {
+export default async function ProjectsPage() {
 	const views = (
 		await redis.mget<number[]>(
 			...allProjects.map((p) => ['pageviews', 'projects', p.slug].join(':'))
@@ -136,5 +136,3 @@ const ProjectsPage = async () => {
 		</div>
 	)
 }
-
-export default ProjectsPage

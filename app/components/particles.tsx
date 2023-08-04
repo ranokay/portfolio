@@ -11,13 +11,13 @@ interface ParticlesProps {
 	refresh?: boolean
 }
 
-const Particles = ({
+export default function Particles({
 	className = '',
 	quantity = 30,
 	staticity = 50,
 	ease = 50,
 	refresh = false,
-}: ParticlesProps) => {
+}: ParticlesProps) {
 	const canvasRef = useRef<HTMLCanvasElement>(null)
 	const canvasContainerRef = useRef<HTMLDivElement>(null)
 	const context = useRef<CanvasRenderingContext2D | null>(null)
@@ -232,5 +232,3 @@ const Particles = ({
 		</div>
 	)
 }
-
-export default Particles

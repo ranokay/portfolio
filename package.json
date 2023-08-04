@@ -1,18 +1,18 @@
 {
-	"name": "portfolio",
-	"version": "0.1.1",
+	"name": "ranokay.oxystack.com",
+	"version": "0.1.2",
 	"private": true,
 	"scripts": {
 		"dev": "next dev",
 		"build": "next build",
 		"start": "next start",
-		"fmt": "pnpm rome check . --apply-suggested && pnpm rome format . --write",
+		"fmt": "pnpm rome check . --apply && pnpm rome format . --write",
 		"clean": "rimraf .next node_modules pnpm-lock.yaml"
 	},
 	"dependencies": {
 		"@next/mdx": "^13.4.12",
-		"@types/node": "20.4.5",
-		"@types/react": "18.2.17",
+		"@types/node": "20.4.7",
+		"@types/react": "18.2.18",
 		"@types/react-dom": "18.2.7",
 		"@upstash/redis": "^1.22.0",
 		"@vercel/analytics": "^1.0.1",

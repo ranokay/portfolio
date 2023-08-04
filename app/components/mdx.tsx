@@ -4,7 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useMDXComponent } from 'next-contentlayer/hooks'
 
-const clsx = (...args: any) => {
+function clsx(...args: any) {
 	return args.filter(Boolean).join(' ')
 }
 const components = {
@@ -100,7 +100,7 @@ const components = {
 		alt,
 		...props
 	}: React.ImgHTMLAttributes<HTMLImageElement>) => (
-		// rome-ignore lint/a11y/useAltText: <explanation>
+		// eslint-disable-next-line @next/next/no-img-element
 		<img
 			className={clsx('rounded-md border border-zinc-200', className)}
 			alt={alt}
@@ -167,7 +167,7 @@ interface MdxProps {
 	code: string
 }
 
-export const Mdx = ({ code }: MdxProps) => {
+export function Mdx({ code }: MdxProps) {
 	const Component = useMDXComponent(code)
 
 	return (
