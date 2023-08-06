@@ -1,9 +1,9 @@
 'use client'
 import { ArrowLeft } from 'lucide-react'
 import Link from 'next/link'
-import React, { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
-export const Navigation: React.FC = () => {
+export const Navigation = () => {
 	const ref = useRef<HTMLElement>(null)
 	const [isIntersecting, setIntersecting] = useState(true)
 

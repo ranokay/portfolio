@@ -5,7 +5,7 @@ interface MousePosition {
 	y: number
 }
 
-export function useMousePosition(): MousePosition {
+export const useMousePosition = (): MousePosition => {
 	const [mousePosition, setMousePosition] = useState<MousePosition>({
 		x: 0,
 		y: 0,

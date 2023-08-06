@@ -1,30 +1,14 @@
 import '../global.css'
-import { Inter } from '@next/font/google'
-import LocalFont from '@next/font/local'
+import { Inter } from 'next/font/google'
+import LocalFont from 'next/font/local'
 import { Metadata } from 'next'
-import { Analytics } from './components/analytics'
+import { Analytics } from '@vercel/analytics/react'
+import { ReactNode } from 'react'
 
 export const metadata: Metadata = {
 	title: {
-		default: 'chronark.com',
-		template: '%s | chronark.com',
-	},
-	description: 'Software engineer at upstash.com and founder of planetfall.io',
-	openGraph: {
-		title: 'chronark.com',
-		description:
-			'Software engineer at upstash.com and founder of planetfall.io',
-		url: 'https://chronark.com',
-		siteName: 'chronark.com',
-		images: [
-			{
-				url: 'https://chronark.com/og.png',
-				width: 1920,
-				height: 1080,
-			},
-		],
-		locale: 'en-US',
-		type: 'website',
+		default: "ranokay's portfolio",
+		template: "%s | ranokay's portfolio",
 	},
 	robots: {
 		index: true,
@@ -36,10 +20,6 @@ export const metadata: Metadata = {
 			'max-image-preview': 'large',
 			'max-snippet': -1,
 		},
-	},
-	twitter: {
-		title: 'Chronark',
-		card: 'summary_large_image',
 	},
 	icons: {
 		shortcut: '/favicon.png',
@@ -55,23 +35,19 @@ const calSans = LocalFont({
 	variable: '--font-calsans',
 })
 
-export default function RootLayout({
+const RootLayout = ({
 	children,
 }: {
-	children: React.ReactNode
-}) {
+	children: ReactNode
+}) => {
 	return (
 		<html lang='en' className={[inter.variable, calSans.variable].join(' ')}>
-			<head>
-				<Analytics />
-			</head>
-			<body
-				className={`bg-black ${
-					process.env.NODE_ENV === 'development' ? 'debug-screens' : undefined
-				}`}
-			>
+			<body className={'bg-black'}>
 				{children}
+				<Analytics />
 			</body>
 		</html>
 	)
 }
+
+export default RootLayout

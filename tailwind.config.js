@@ -2,11 +2,7 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-	content: [
-		'./app/**/*.{js,ts,jsx,tsx}',
-		'./mdx-components.tsx',
-		'content/**/*.mdx',
-	],
+	content: ['./app/**/*.{js,ts,jsx,tsx}'],
 
 	theme: {
 		extend: {
@@ -104,8 +100,5 @@ module.exports = {
 			},
 		},
 	},
-	plugins: [
-		require('@tailwindcss/typography'),
-		require('tailwindcss-debug-screens'),
-	],
+	plugins: [require('@tailwindcss/typography')],
 }
